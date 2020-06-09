@@ -7,9 +7,9 @@ class Block {
     this.timestamp = timestamp;
     this.data = data;
     this.previousHash = previousHash;
-    this.hash = '';
+    this.hash = this.calculateHash();
   }
-  // function to calculate hash function of this block
+  // function to calculate hashfunction of this block
   calculateHash(){
     require SHA256(this.index + this.previousHash + this.timestamp + JSON.stringify(this.data)).toString();
   }
