@@ -11,7 +11,7 @@ class Block {
   }
   // function to calculate hashfunction of this block
   calculateHash(){
-    require SHA256(this.index + this.previousHash + this.timestamp + JSON.stringify(this.data)).toString();
+    return SHA256(this.index + this.previousHash + this.timestamp + JSON.stringify(this.data)).toString();
   }
 }
 
@@ -25,7 +25,7 @@ class Blockchian {
   }
 
   getLatestBlock(){
-    return this.chain(this.chain.length - 1);
+    return this.chain[this.chain.length - 1];
   }
 
   addBlock(newBlock){
