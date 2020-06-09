@@ -34,3 +34,10 @@ class Blockchian {
     this.chain.push(newBlock);
   }
 }
+
+
+let tibCoin = new Blockchian();
+tibCoin.addBlock(new Block(1, "09/06/2020", { amount: 4 }));
+tibCoin.addBlock(new Block(2, "09/06/2020", { amount: 10 }));
+
+console.log(JSON.stringify(tibCoin, null, 4));
